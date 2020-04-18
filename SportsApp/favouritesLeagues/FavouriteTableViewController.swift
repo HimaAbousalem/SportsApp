@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FavouriteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,24 +31,32 @@ class FavouriteTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
+        
+        let url = URL(string: "https://www.thesportsdb.com/images/media/league/badge/dqo6r91549878326.png")
+        cell.leagueBadge.roundedImage()
+        cell.leagueBadge.kf.setImage(with: url)
+        cell.leagueName.text = "some league"
+        cell.leagueYoutube.image = UIImage(named: "youtube.png")
+        
         return cell
     }
-    */
+    
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.bounds.size.height * 0.2;
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
