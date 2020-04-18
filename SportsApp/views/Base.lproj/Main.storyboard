@@ -1,48 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QpL-JG-aQG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7fR-GZ-4VI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
-        <scene sceneID="eFw-Bb-5q7">
+        <scene sceneID="bcx-E5-HMi">
             <objects>
-                <collectionViewController id="23u-Yo-u9x" customClass="SportsCollectionViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Kdm-hw-hfp">
+                <viewController id="TcY-Ni-jf9" customClass="SportsViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lfd-a5-pBZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mzx-JI-wYz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wgQ-nG-E05">
+                                    <size key="itemSize" width="170" height="174"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="pp4-LX-ZqU" customClass="SportCollectionViewCell" customModule="SportsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="174"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="174"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="TcY-Ni-jf9" id="45C-VO-c3w"/>
+                                    <outlet property="delegate" destination="TcY-Ni-jf9" id="jXy-L6-cBn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5tH-R7-hU0">
-                            <size key="itemSize" width="158" height="156"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0pl-mJ-4ZZ">
-                                <rect key="frame" x="0.0" y="0.0" width="158" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="156"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="23u-Yo-u9x" id="cge-uQ-EBz"/>
-                            <outlet property="delegate" destination="23u-Yo-u9x" id="z2W-cD-CCr"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="rEJ-Jr-FAe"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Feb-Ik-6es" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="mzx-JI-wYz" firstAttribute="top" secondItem="um4-sg-fmS" secondAttribute="top" id="19c-az-7mL"/>
+                            <constraint firstItem="mzx-JI-wYz" firstAttribute="bottom" secondItem="um4-sg-fmS" secondAttribute="bottom" id="D0K-L7-2ZG"/>
+                            <constraint firstItem="mzx-JI-wYz" firstAttribute="trailing" secondItem="um4-sg-fmS" secondAttribute="trailing" id="S5O-65-Mj1"/>
+                            <constraint firstItem="mzx-JI-wYz" firstAttribute="leading" secondItem="um4-sg-fmS" secondAttribute="leading" id="tCA-cw-QK6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="um4-sg-fmS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="KN1-fP-a04"/>
+                    <connections>
+                        <outlet property="sportsCollectionView" destination="mzx-JI-wYz" id="2fV-8B-dhD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2P-wv-d6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149.5999999999999" y="220.83958020989508"/>
+            <point key="canvasLocation" x="1292" y="-107.49625187406298"/>
         </scene>
         <!--Item-->
         <scene sceneID="rmC-7d-13u">
@@ -71,26 +88,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ER-MT-Vhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="988"/>
+            <point key="canvasLocation" x="1292" y="543"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="rM7-CJ-WU2">
+        <scene sceneID="YSW-fh-wUg">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QpL-JG-aQG" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7fR-GZ-4VI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WD5-5Y-7zn">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXF-b2-DXq">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="23u-Yo-u9x" kind="relationship" relationship="viewControllers" id="Oeu-ku-6dq"/>
-                        <segue destination="0BE-aw-Ncn" kind="relationship" relationship="viewControllers" id="LFw-Vt-5i5"/>
+                        <segue destination="TcY-Ni-jf9" kind="relationship" relationship="viewControllers" id="IPu-QE-rfa"/>
+                        <segue destination="0BE-aw-Ncn" kind="relationship" relationship="viewControllers" id="o5F-N5-uy3"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="esm-hu-9AM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Q3-9X-91u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="221"/>
+            <point key="canvasLocation" x="495" y="253"/>
         </scene>
     </scenes>
 </document>
