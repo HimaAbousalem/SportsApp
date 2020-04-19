@@ -9,19 +9,28 @@
 import UIKit
 import Kingfisher
 
-class FavouriteTableViewController: UITableViewController {
-
+class LeaguesTableViewController: UITableViewController ,LeagueView{
+    var leagues = [League]()
+    let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
+    let subscriper = LeagueSubscriber()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+     
+        subscriper.attachView(view: self)
+        presenter.getLeagues()
+        
     }
-
+    func setLeagues(list: [League]) {
+        print("######## loaded leagues size ######### \(list.count)")
+        self.leagues = list
+        self.tableView.reloadData()
+    }
+    
+    func setEmpty() {
+        print("No leagues !")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,7 +45,8 @@ class FavouriteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        print("!!!!!!!!! leagues in table !!!!!!!!!! \(leagues.count)")
+        return leagues.count
     }
 
     
@@ -44,18 +54,37 @@ class FavouriteTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
         
-        let url = URL(string: "https://www.thesportsdb.com/images/media/league/badge/dqo6r91549878326.png")
-        cell.leagueBadge.roundedImage()
-        cell.leagueBadge.kf.setImage(with: url)
-        cell.leagueName.text = "some league"
-        cell.leagueYoutube.image = UIImage(named: "youtube.png")
+        let league = leagues[indexPath.row]
         
+        cell.leagueBadge.roundedImage()
+        cell.leagueYoutube.image = UIImage(named: "youtube.png")
+        cell.leagueName.text = league.name!
+        if let badge = league.badge {
+            cell.leagueBadge.kf.setImage(with: URL(string: badge))
+        }else{
+            
+        }
         return cell
     }
     
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.size.height * 0.2;
+        return 200;
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let league = leagues[indexPath.row]
+        print("selected !!")
+        
+        /*if let videoLink = league.youtube{
+            let url = URL(string: videoLink)!
+            
+         
+            }
+         */
+        
+        }
+        
     }
     /*
     // Override to support conditional editing of the table view.
@@ -102,4 +131,4 @@ class FavouriteTableViewController: UITableViewController {
     }
     */
 
-}
+
