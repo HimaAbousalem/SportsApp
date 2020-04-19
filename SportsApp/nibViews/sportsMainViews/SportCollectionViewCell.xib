@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="213" height="187"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dna-WE-0ip">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dna-WE-0ip">
                         <rect key="frame" x="0.0" y="0.0" width="213" height="187"/>
                     </imageView>
                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhi-uO-YUF">
@@ -59,7 +59,7 @@
                 <outlet property="sportImage" destination="Dna-WE-0ip" id="4tg-Oo-ZBM"/>
                 <outlet property="sportName" destination="2qN-OT-fwF" id="Xbb-tg-mFK"/>
             </connections>
-            <point key="canvasLocation" x="-80" y="73"/>
+            <point key="canvasLocation" x="-80.5" y="72.5"/>
         </collectionViewCell>
     </objects>
 </document>

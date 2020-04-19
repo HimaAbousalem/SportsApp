@@ -27,8 +27,8 @@ class FetchSports {
                     for sport in json["sports"].arrayValue{
                         sports.append(Sport(id: sport["idSport"].stringValue, name: sport["strSport"].stringValue, image: sport["strSportThumb"].stringValue))
                     }
-                    //use Notification Center or clousers.
-                    debugPrint(sports)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sports"), object: nil, userInfo: ["sports": sports])
+                    debugPrint(sports[0])
                 case .failure(let error):
                     debugPrint(error)
                 }

@@ -1,5 +1,5 @@
 //
-//  SportsPresenter.swift
+//  DataRepository.swift
 //  SportsApp
 //
 //  Created by Esraa Hassan on 4/19/20.
@@ -8,11 +8,14 @@
 
 import Foundation
 
-class SportsPresenter: SportPresenterDelegate{
+class DataRepository{
+    static let Instance = DataRepository()
     
-    func getSportsData() {
+    private init(){
+    }
+    
+    func getSportsData(){
         FetchSports.Instance.getAllSports()
-        
     }
     
 }

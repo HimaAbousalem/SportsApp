@@ -27,6 +27,9 @@
 		BA5E484D244BBE3400E8F3F6 /* FetchSports.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E484C244BBE3400E8F3F6 /* FetchSports.swift */; };
 		BA5E4851244BBFD300E8F3F6 /* SportsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E4850244BBFD300E8F3F6 /* SportsPresenter.swift */; };
 		BA5E4853244BC4AB00E8F3F6 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E4852244BC4AB00E8F3F6 /* Notification.swift */; };
+		BA5E4856244BECF600E8F3F6 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E4855244BECF600E8F3F6 /* DataRepository.swift */; };
+		BA5E485C244BEE7800E8F3F6 /* SportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E485B244BEE7800E8F3F6 /* SportDelegate.swift */; };
+		BA5E485E244CAE8900E8F3F6 /* SportSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E485D244CAE8800E8F3F6 /* SportSubscriber.swift */; };
 		BA7BBCC1244A3C5600A996D7 /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BBCC0244A3C5600A996D7 /* FavouriteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		BA5E484C244BBE3400E8F3F6 /* FetchSports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSports.swift; sourceTree = "<group>"; };
 		BA5E4850244BBFD300E8F3F6 /* SportsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPresenter.swift; sourceTree = "<group>"; };
 		BA5E4852244BC4AB00E8F3F6 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		BA5E4855244BECF600E8F3F6 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		BA5E485B244BEE7800E8F3F6 /* SportDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDelegate.swift; sourceTree = "<group>"; };
+		BA5E485D244CAE8800E8F3F6 /* SportSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportSubscriber.swift; sourceTree = "<group>"; };
 		BA7BBCC0244A3C5600A996D7 /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +166,7 @@
 		BA5E4848244BB6FF00E8F3F6 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				BA5E4854244BECC400E8F3F6 /* repository */,
 				BA5E4849244BBD7C00E8F3F6 /* network */,
 				BA7BBCBF244A3BF700A996D7 /* Entities */,
 			);
@@ -192,6 +199,14 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		BA5E4854244BECC400E8F3F6 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				BA5E4855244BECF600E8F3F6 /* DataRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 		BA7BBCB9244A3B0800A996D7 /* appDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,8 @@
 			children = (
 				BA5E484F244BBFA400E8F3F6 /* view */,
 				BA5E484E244BBF8300E8F3F6 /* presenter */,
+				BA5E485B244BEE7800E8F3F6 /* SportDelegate.swift */,
+				BA5E485D244CAE8800E8F3F6 /* SportSubscriber.swift */,
 			);
 			path = sports;
 			sourceTree = "<group>";
@@ -365,8 +382,11 @@
 				BA7BBCC1244A3C5600A996D7 /* FavouriteTableViewController.swift in Sources */,
 				BA5E4851244BBFD300E8F3F6 /* SportsPresenter.swift in Sources */,
 				BA5E483B244B934B00E8F3F6 /* SportsViewController.swift in Sources */,
+				BA5E4856244BECF600E8F3F6 /* DataRepository.swift in Sources */,
+				BA5E485E244CAE8900E8F3F6 /* SportSubscriber.swift in Sources */,
 				BA5E4838244B8FF300E8F3F6 /* SportCollectionViewCell.swift in Sources */,
 				BA5E4844244BA95D00E8F3F6 /* Team.swift in Sources */,
+				BA5E485C244BEE7800E8F3F6 /* SportDelegate.swift in Sources */,
 				BA5E4853244BC4AB00E8F3F6 /* Notification.swift in Sources */,
 				BA5E484D244BBE3400E8F3F6 /* FetchSports.swift in Sources */,
 				AB6BD708244A2E9B007B841C /* AppDelegate.swift in Sources */,
