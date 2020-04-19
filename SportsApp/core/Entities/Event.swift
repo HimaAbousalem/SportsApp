@@ -14,6 +14,6 @@ struct Event{
     let time: String
     let homeTeam: String?
     let awayTeam: String?
-    let homeScore: Int?
-    let awayScore: Int?
+    let homeScore: String?
+    let awayScore: String?
 }
