@@ -8,8 +8,6 @@
 
 import Foundation
 protocol LeagueView : NSObjectProtocol {
-    func startLoading()
-    func finishLoading()
-    func setLeagues()
+    func setLeagues(list : [League])
     func setEmpty()
 }

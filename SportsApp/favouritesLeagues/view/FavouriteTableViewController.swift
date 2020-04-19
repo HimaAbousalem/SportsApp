@@ -10,44 +10,27 @@ import UIKit
 import Kingfisher
 
 class FavouriteTableViewController: UITableViewController ,LeagueView{
-    func startLoading() {
-        print("start loading !!")
-    }
-    
-    func finishLoading() {
-        print("finish loading !!")
-    }
-    
-    func setLeagues() {
-        print("leagues loaded !!")
-    }
-    
-    func setEmpty() {
-        print("no leagues !!")
-    }
-    
-    var leagues = [LeagueDetails]()
+    var leagues = [League]()
     let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
+    let subscriper = LeagueSubscriber()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
      
-        presenter.attachView(view: self)
+        subscriper.attachView(view: self)
         presenter.getLeagues()
         
-        
-        //todo: seperate the notification !!
-        NotificationCenter.default.addObserver(self, selector:#selector(loadLeagues(n:)), name: NSNotification.Name.init("LeaguesLoaded"), object: nil)
-    
+    }
+    func setLeagues(list: [League]) {
+        print("######## loaded leagues size ######### \(list.count)")
+        self.leagues = list
+        self.tableView.reloadData()
     }
     
-    @objc func loadLeagues(n:NSNotification){
-        self.leagues = (n.userInfo?["leagues"] as? [LeagueDetails])!
-        tableView.reloadData()
-        print("loaded leagues size : \(self.leagues.count)")
+    func setEmpty() {
+        print("No leagues !")
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,6 +45,7 @@ class FavouriteTableViewController: UITableViewController ,LeagueView{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("!!!!!!!!! leagues in table !!!!!!!!!! \(leagues.count)")
         return leagues.count
     }
 
