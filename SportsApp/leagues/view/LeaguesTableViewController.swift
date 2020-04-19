@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class FavouriteTableViewController: UITableViewController ,LeagueView{
+class LeaguesTableViewController: UITableViewController ,LeagueView{
     var leagues = [League]()
     let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
     let subscriper = LeagueSubscriber()
