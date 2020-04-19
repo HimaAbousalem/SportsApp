@@ -69,7 +69,7 @@ class LeaguesTableViewController: UITableViewController ,LeagueView{
     
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200;
+        return tableView.bounds.size.height * 0.2;
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
