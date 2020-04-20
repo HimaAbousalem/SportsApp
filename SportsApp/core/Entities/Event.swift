@@ -9,5 +9,11 @@
 import Foundation
 
 struct Event{
-    
+    let name: String?
+    let date: String
+    let time: String
+    let homeTeam: String?
+    let awayTeam: String?
+    let homeScore: Int?
+    let awayScore: Int?
 }
