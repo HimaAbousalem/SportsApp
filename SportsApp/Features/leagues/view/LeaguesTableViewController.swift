@@ -9,57 +9,30 @@
 import UIKit
 import Kingfisher
 
-class LeaguesTableViewController: UITableViewController, NextEventView{
-//,LeagueView{
-
-
-    /*var leagues = [League]()
+class LeaguesTableViewController: UITableViewController,LeagueView{
+    var leagues = [League]()
     let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
-    let subscriper = LeagueSubscriber()*/
-    
-    var nextEvents = [Event]()
-    let eventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
-    let eventSubscriper = NextEventSubscriber()
-    
-    /*var latestEvents = [Event]()
-    let eventPresenter = LatestEventPresenter(handler: FetchLatestEventsHandler())
-    let eventSubscriper = LatestEventSubscriber()
-    */
+    let subscriper = LeagueSubscriber()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
      
-        //subscriper.attachView(view: self)
-        //presenter.getLeagues()
-        
-        eventSubscriper.attachView(view: self)
-        //eventPresenter.getLatestEvents()
-        eventPresenter.getNextEvents()
-        
+        subscriper.attachView(view: self)
+        presenter.getLeagues()
+
         
     }
-    /*func setLeagues(list: [League]) {
+    func setLeagues(list: [League]) {
         print("######## loaded leagues size ######### \(list.count)")
         self.leagues = list
         self.tableView.reloadData()
     }
-    */
-    func setNextEvents(list: [Event]) {
-        print("######## loaded events size ######### \(list.count)")
-        self.nextEvents = list
-        self.tableView.reloadData()
-    }
-    
-    /*func setLatestEvents(list: [Event]) {
-        print("######## loaded events size ######### \(list.count)")
-        self.latestEvents = list
-        self.tableView.reloadData()
-    }*/
-    
+ 
     func setEmpty() {
-        print("No leagues !")
+        print("No leagues!")
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,8 +47,7 @@ class LeaguesTableViewController: UITableViewController, NextEventView{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-         //return leagues.count
-        return nextEvents.count
+         return leagues.count
     }
 
     
@@ -83,7 +55,7 @@ class LeaguesTableViewController: UITableViewController, NextEventView{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
         
-        /*let league = leagues[indexPath.row]
+        let league = leagues[indexPath.row]
         
         cell.leagueBadge.roundedImage()
         cell.leagueYoutube.image = UIImage(named: "youtube.png")
@@ -92,14 +64,8 @@ class LeaguesTableViewController: UITableViewController, NextEventView{
             cell.leagueBadge.kf.setImage(with: URL(string: badge))
         }else{
             
-        }*/
-        let event = nextEvents[indexPath.row]
-        if let name = event.name{
-            cell.leagueName.text = name
-        }else{
-            cell.leagueName.text = "not valid"
         }
-        
+       
         return cell
     }
     

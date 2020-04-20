@@ -37,7 +37,7 @@ class FetchLatestEventsHandler {
                          awayScore: event["intAwayScore"].stringValue)
                         
                      events.append(event)
-                     debugPrint("\(event.homeTeam!) \(event.awayTeam!) \(event.homeScore!) ,\(event.awayScore!) ,\(event.date) , \(event.time)")
+                     debugPrint("\(event.homeTeam!) , \(event.awayTeam!) , \(event.homeScore!) ,\(event.awayScore!) ,\(event.date) , \(event.time)")
                     }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "latestEventsLoaded"), object:nil, userInfo: ["latestEvents": events])
                     

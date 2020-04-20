@@ -9,5 +9,5 @@
 import Foundation
 protocol LatestEventView : NSObjectProtocol {
     func setLatestEvents(list : [Event])
-    func setEmpty()
+    func setLatestEventsEmpty()
 }

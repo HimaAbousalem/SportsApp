@@ -14,10 +14,16 @@ class LeaguesDetailsViewController: UIViewController {
     @IBOutlet weak var latestCollectionView: UICollectionView!
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     /***eman**/
-        var collectionViewFlowLayout : UICollectionViewFlowLayout!
+        var upComingFlowLayout : UICollectionViewFlowLayout!
+        var latestViewFlowLayout : UICollectionViewFlowLayout!
+    
         var nextEvents = [Event]()
-        let eventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
-        let eventSubscriper = NextEventSubscriber()
+        let upComingEventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
+        let upComingEventSubscriper = NextEventSubscriber()
+    
+        var latestEvents = [Event]()
+        let latestEventPresenter = LatestEventPresenter(handler: FetchLatestEventsHandler())
+        let latestEventSubscriper = LatestEventSubscriber()
     /******/
     /***ibrahim**/
     
@@ -26,10 +32,15 @@ class LeaguesDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /***eman**/
-            eventSubscriper.attachView(view: self)
-            eventPresenter.getNextEvents()
+            upComingEventSubscriper.attachView(view: self)
+            upComingEventPresenter.getNextEvents()
             self.upcomingCollectionView.register(UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "upcomingCell")
-            setupCollectionViewItemSize()
+            setUpUpcomingCollectionViewSize()
+        
+            latestEventSubscriper.attachView(view: self)
+            latestEventPresenter.getLatestEvents()
+            self.latestCollectionView.register(UINib(nibName: "LatestEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "latestCell")
+            setupLatestCollectionViewSize()
         /******/
         /***ibrahim**/
         

@@ -35,7 +35,7 @@ class FetchNextEventsHandler {
                             homeScore: nil,
                             awayScore: nil)
                         events.append(event)
-                        debugPrint("\(event.name!) ,\(event.date) ,    \(event.time)")
+                        debugPrint("\(event.name!) ,\(event.date) ,\(event.time)")
                     }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NextEventsLoaded"), object:nil, userInfo: ["nextEvents": events])
                     

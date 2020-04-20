@@ -25,7 +25,7 @@ class NextEventSubscriber{
         if(events.count > 0){
             self.eventView?.setNextEvents(list: events)
         }else{
-            self.eventView?.setEmpty()
+            self.eventView?.setNextEventsEmpty()
         }
         
     }

@@ -15,7 +15,7 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
         if collectionView == upcomingCollectionView{
             data = nextEvents.count
         }else if collectionView == latestCollectionView{
-            //            return 0
+            data = latestEvents.count
         }else if collectionView == teamsCollectionView{
             //            return 0
         }
@@ -42,6 +42,24 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             return cell
         }else if collectionView == latestCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventsCollectionViewCell
+            let event = latestEvents[indexPath.row]
+            cell.team1.text = event.homeTeam
+            cell.team2.text = event.awayTeam
+            print("score 1 is \(event.homeScore)")
+            print("score 2 is \(event.awayScore)")
+            /*if let score1 = event.homeScore{
+                cell.score1.text = score1
+            }else{
+                cell.score1.text = "0"
+            }
+            if let score2 = event.awayScore{
+                cell.score2.text = score2
+            }else{
+                cell.score2.text = "0"
+            }*/
+            cell.date.text = event.date
+            cell.time.text = event.time
+            
             cell.backgroundColor = UIColor.lightGray
             return cell
         }else if collectionView == teamsCollectionView{

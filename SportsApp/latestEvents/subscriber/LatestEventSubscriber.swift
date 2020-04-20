@@ -25,7 +25,7 @@ class LatestEventSubscriber{
         if(events.count > 0){
             self.eventView?.setLatestEvents(list: events)
         }else{
-            self.eventView?.setEmpty()
+            self.eventView?.setLatestEventsEmpty()
         }
         
 }
