@@ -58,7 +58,7 @@ class LeaguesTableViewController: UITableViewController ,LeagueView{
         
         cell.leagueBadge.roundedImage()
         cell.leagueYoutube.image = UIImage(named: "youtube.png")
-        cell.leagueName.text = league.name!
+        cell.leagueName.text = league.name
         if let badge = league.badge {
             cell.leagueBadge.kf.setImage(with: URL(string: badge))
         }else{

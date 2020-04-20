@@ -45,7 +45,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-wr-6Lt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="NoU-dc-nI1"/>
+                                    <navigationItem title="Sports" id="NoU-dc-nI1"/>
                                 </items>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
@@ -74,6 +74,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2P-wv-d6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1292" y="-107.49625187406298"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="550-iO-DRW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Details" id="MAf-Tk-2x2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOD-c1-g3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="91"/>
         </scene>
         <!--Item-->
         <scene sceneID="rmC-7d-13u">
