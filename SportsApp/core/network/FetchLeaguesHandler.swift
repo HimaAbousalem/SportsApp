@@ -14,7 +14,8 @@ class FetchLeaguesHandler {
     func getLeagues(){
         var leagues : [League] = []
         let url = "https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php"
-        let sportDummy = "Fighting"
+        let sportDummy = "Fighting".replacingOccurrences(of: " ", with: "_")
+        print(sportDummy)
         let parameters = ["s":sportDummy]
         
         Alamofire.request(url,parameters: parameters)
@@ -28,12 +29,12 @@ class FetchLeaguesHandler {
                             id: league["idLeague"].stringValue,
                             name:league["strLeague"].stringValue,
                             sport:league["strSport"].stringValue,
-                            youtube:league["strYoutube"].stringValue,
-                            badge:league["strBadge"].stringValue
+                            youtube:league["strYoutube"].string,
+                            badge:league["strBadge"].string
                         )
                         leagues.append(league)
                         
-                        debugPrint("\(league.id!),\(league.name!), \(league.sport!),\(league.youtube!),\(league.badge!)")
+                        //debugPrint("\(league.id),\(league.name), \(league.sport),\(league.youtube!),\(league.badge!)")
 
                     }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LeaguesLoaded"),object: nil, userInfo: ["leagues": leagues])

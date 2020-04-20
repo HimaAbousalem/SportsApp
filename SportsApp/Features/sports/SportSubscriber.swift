@@ -11,7 +11,7 @@ import Foundation
 class SportSubscriber{
     var viewDelegate: SportViewDelegate?
     init() {
-        NotificationCenter.default.addObserver(self, selector:#selector(recieveSportsData(notification:)), name: NSNotification.Name.init("sports"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(recieveSportsData(notification:)), name: .getSports, object: nil)
     }
     func attachView(viewDelegate: SportViewDelegate){
         self.viewDelegate = viewDelegate
@@ -26,6 +26,5 @@ class SportSubscriber{
         }else{
             viewDelegate?.showErrorMessage(message: "Something went wrong!")
         }
-        
     }
 }

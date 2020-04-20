@@ -19,26 +19,27 @@ class SportsViewController: UIViewController, SportViewDelegate {
         let nib = UINib(nibName: "SportCollectionViewCell", bundle: nil)
         sportsCollectionView.register(nib, forCellWithReuseIdentifier: "cell")
         setupCollectionViewItemSize()
-        let subscriber = SportSubscriber()
-        subscriber.attachView(viewDelegate: self)
-
+        NotificationCenter.default.addObserver(self, selector:#selector(recieveSportsData(notification:)), name: .getSports, object: nil)
+        // subscriber = SportSubscriber()
+        //subscriber.attachView(viewDelegate: self)
+        FetchTeams.Instance.getAllTeams(query: "English%20Premier%20League")
         let presenter = SportsPresenter()
         presenter.getSportsData()
         
     }
     
-//    @objc func recieveSportsData(notification: NSNotification){
-//        sports = (notification.userInfo?["sports"] as? [Sport])!
-//        print(sports?.count)
-//        print("Hello")
+    @objc func recieveSportsData(notification: NSNotification){
+        sports = (notification.userInfo?["sports"] as? [Sport])!
+        print(sports.count)
+        print("Hello")
 //        self.sportsCollectionView.reloadData()
-        //   if sports != nil && sports?.count != 0{
-        //viewDelegate?.showSportsData(sports: sports!)
-        // }else{
-        //   viewDelegate?.showErrorMessage(message: "Something went wrong!")
-        // }
-        
-//    }
+//           if sports != nil && sports?.count != 0{
+//        viewDelegate?.showSportsData(sports: sports!)
+//         }else{
+//           viewDelegate?.showErrorMessage(message: "Something went wrong!")
+//         }
+        self.sportsCollectionView.reloadData()
+    }
     
     func showSportsData(sports: [Sport]) {
         self.sports = sports
@@ -55,15 +56,12 @@ class SportsViewController: UIViewController, SportViewDelegate {
         if collectionViewFlowLayout == nil{
             let itemsPerRow:CGFloat = 2
             let lineSpacing:CGFloat = 5
-            let interItemSpacing:CGFloat = 5
-//13
             
-            let width = ((sportsCollectionView.frame.size.width - (itemsPerRow  * interItemSpacing)) / itemsPerRow)+13
-//            let width = sportsCollectionView.frame.size.width / itemsPerRow
+            let width = (UIScreen.main.bounds.width - (lineSpacing * 4)) / itemsPerRow
             let height = width
             collectionViewFlowLayout = UICollectionViewFlowLayout()
             collectionViewFlowLayout.itemSize = CGSize(width: width, height: height)
-            collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: lineSpacing, left: lineSpacing, bottom: 0, right: lineSpacing)
+            collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: lineSpacing, left: lineSpacing, bottom: lineSpacing, right: lineSpacing)
 
             sportsCollectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
         }
