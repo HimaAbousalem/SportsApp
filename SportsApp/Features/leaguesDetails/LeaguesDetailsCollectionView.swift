@@ -13,7 +13,7 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var data = 0
         if collectionView == upcomingCollectionView{
-            //            data =
+            data = nextEvents.count
         }else if collectionView == latestCollectionView{
             //            return 0
         }else if collectionView == teamsCollectionView{
@@ -29,17 +29,26 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell: UICollectionViewCell? = nil
         if collectionView == upcomingCollectionView{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpComingEventsCollectionViewCell
-            cell?.backgroundColor = UIColor.red
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpComingEventsCollectionViewCell
+            let event = nextEvents[indexPath.row]
+            let name = event.name
+            let teams = name?.components(separatedBy: "vs")
+            cell.team1.text = teams?[0]
+            cell.team2.text = teams?[1]
+            cell.date.text = event.date
+            cell.time.text = event.time
+            cell.backgroundColor = UIColor.red
+            return cell
         }else if collectionView == latestCollectionView{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventsCollectionViewCell
-            cell?.backgroundColor = UIColor.lightGray
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventsCollectionViewCell
+            cell.backgroundColor = UIColor.lightGray
+            return cell
         }else if collectionView == teamsCollectionView{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-            cell?.backgroundColor = UIColor.black
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
+            cell.backgroundColor = UIColor.black
+            return cell
         }
-        return cell!
+        return UICollectionViewCell()
     }
 }

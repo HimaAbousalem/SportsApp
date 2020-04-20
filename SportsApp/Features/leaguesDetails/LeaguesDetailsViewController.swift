@@ -14,7 +14,10 @@ class LeaguesDetailsViewController: UIViewController {
     @IBOutlet weak var latestCollectionView: UICollectionView!
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     /***eman**/
-    
+        var collectionViewFlowLayout : UICollectionViewFlowLayout!
+        var nextEvents = [Event]()
+        let eventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
+        let eventSubscriper = NextEventSubscriber()
     /******/
     /***ibrahim**/
     
@@ -23,8 +26,10 @@ class LeaguesDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /***eman**/
-        //define vars arr = [upcoming]()
-        //call func
+            eventSubscriper.attachView(view: self)
+            eventPresenter.getNextEvents()
+            self.upcomingCollectionView.register(UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "upcomingCell")
+            setupCollectionViewItemSize()
         /******/
         /***ibrahim**/
         
