@@ -10,32 +10,36 @@ import Foundation
 import UIKit
 
 extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    
-   
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var data = 0
         if collectionView == upcomingCollectionView{
-//            data =
+            //            data =
         }else if collectionView == latestCollectionView{
-//            return 0
+            //            return 0
         }else if collectionView == teamsCollectionView{
-//            return 0
+            //            return 0
         }
         return data
     }
     
+    
+   
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell: UICollectionViewCell = nil
+        var cell: UICollectionViewCell? = nil
         if collectionView == upcomingCollectionView{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpComingEventsCollectionViewCell
-            cell.backgroundColor = UIColor.red
+            cell?.backgroundColor = UIColor.red
         }else if collectionView == latestCollectionView{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventsCollectionViewCell
-            cell.backgroundColor = UIColor.lightGray
+            cell?.backgroundColor = UIColor.lightGray
         }else if collectionView == teamsCollectionView{
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-            cell.backgroundColor = UIColor.black
+            cell?.backgroundColor = UIColor.black
         }
-        return cell
+        return cell!
     }
 }
