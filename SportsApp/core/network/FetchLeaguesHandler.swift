@@ -34,7 +34,7 @@ class FetchLeaguesHandler {
                         )
                         leagues.append(league)
                         
-                        debugPrint("\(league.id),\(league.name), \(league.sport),\(league.youtube!),\(league.badge!)")
+                        //debugPrint("\(league.id),\(league.name), \(league.sport),\(league.youtube!),\(league.badge!)")
 
                     }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LeaguesLoaded"),object: nil, userInfo: ["leagues": leagues])
