@@ -9,16 +9,17 @@
 import UIKit
 import Kingfisher
 
-class LeaguesTableViewController: UITableViewController,LeagueView{
-//,LatestEventView{
+class LeaguesTableViewController: UITableViewController, NextEventView{
+//,LeagueView{
 
-    var leagues = [League]()
+
+    /*var leagues = [League]()
     let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
-    let subscriper = LeagueSubscriber()
+    let subscriper = LeagueSubscriber()*/
     
-    /*var nextEvents = [Event]()
+    var nextEvents = [Event]()
     let eventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
-    let eventSubscriper = NextEventSubscriber()*/
+    let eventSubscriper = NextEventSubscriber()
     
     /*var latestEvents = [Event]()
     let eventPresenter = LatestEventPresenter(handler: FetchLatestEventsHandler())
@@ -29,26 +30,26 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
         super.viewDidLoad()
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
      
-        subscriper.attachView(view: self)
-        presenter.getLeagues()
+        //subscriper.attachView(view: self)
+        //presenter.getLeagues()
         
-        //eventSubscriper.attachView(view: self)
+        eventSubscriper.attachView(view: self)
         //eventPresenter.getLatestEvents()
-        //eventPresenter.getNextEvents()
+        eventPresenter.getNextEvents()
         
         
     }
-    func setLeagues(list: [League]) {
+    /*func setLeagues(list: [League]) {
         print("######## loaded leagues size ######### \(list.count)")
         self.leagues = list
         self.tableView.reloadData()
     }
-    
-    /*func setNextEvents(list: [Event]) {
+    */
+    func setNextEvents(list: [Event]) {
         print("######## loaded events size ######### \(list.count)")
         self.nextEvents = list
         self.tableView.reloadData()
-    }*/
+    }
     
     /*func setLatestEvents(list: [Event]) {
         print("######## loaded events size ######### \(list.count)")
@@ -73,8 +74,8 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-         return leagues.count
-        //return latestEvents.count
+         //return leagues.count
+        return nextEvents.count
     }
 
     
@@ -82,7 +83,7 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
         
-        let league = leagues[indexPath.row]
+        /*let league = leagues[indexPath.row]
         
         cell.leagueBadge.roundedImage()
         cell.leagueYoutube.image = UIImage(named: "youtube.png")
@@ -91,13 +92,13 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
             cell.leagueBadge.kf.setImage(with: URL(string: badge))
         }else{
             
-        }
-        /*let event = latestEvents[indexPath.row]
-        if let hometeam = event.homeTeam{
-            cell.leagueName.text = hometeam
+        }*/
+        let event = nextEvents[indexPath.row]
+        if let name = event.name{
+            cell.leagueName.text = name
         }else{
             cell.leagueName.text = "not valid"
-        }*/
+        }
         
         return cell
     }
