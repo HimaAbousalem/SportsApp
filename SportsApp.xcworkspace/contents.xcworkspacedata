@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:LocalLeague+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:LocalLeague+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:SportsApp.xcodeproj">
    </FileRef>
    <FileRef

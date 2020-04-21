@@ -26,25 +26,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNU-hJ-XRb">
                                         <rect key="frame" x="0.0" y="6" width="375" height="60"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfav" translatesAutoresizingMaskIntoConstraints="NO" id="uiL-Xj-siq">
-                                                <rect key="frame" x="273.5" y="8" width="93.5" height="44"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-S6-9yd">
-                                                <rect key="frame" x="16" y="8" width="249.5" height="44"/>
+                                                <rect key="frame" x="16" y="8" width="282" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW3-3Y-eL9">
+                                                <rect key="frame" x="314" y="8" width="45" height="44"/>
+                                                <state key="normal" image="notfav"/>
+                                                <connections>
+                                                    <action selector="favouriteAction:" destination="sMt-95-Nwt" eventType="touchUpInside" id="085-QE-wbi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="QHZ-S6-9yd" firstAttribute="top" secondItem="UNU-hJ-XRb" secondAttribute="top" constant="8" id="4b5-X2-KSm"/>
                                             <constraint firstItem="QHZ-S6-9yd" firstAttribute="leading" secondItem="UNU-hJ-XRb" secondAttribute="leading" constant="16" id="7Pe-eG-JPs"/>
-                                            <constraint firstItem="uiL-Xj-siq" firstAttribute="width" secondItem="UNU-hJ-XRb" secondAttribute="width" multiplier="0.25" id="FHe-6S-ZXO"/>
                                             <constraint firstAttribute="bottom" secondItem="QHZ-S6-9yd" secondAttribute="bottom" constant="8" id="FLa-tt-e2X"/>
-                                            <constraint firstItem="uiL-Xj-siq" firstAttribute="leading" secondItem="QHZ-S6-9yd" secondAttribute="trailing" constant="8" id="G0J-hI-VUX"/>
-                                            <constraint firstItem="uiL-Xj-siq" firstAttribute="top" secondItem="UNU-hJ-XRb" secondAttribute="top" constant="8" id="eZP-0R-SGF"/>
-                                            <constraint firstAttribute="trailing" secondItem="uiL-Xj-siq" secondAttribute="trailing" constant="8" id="rHT-oP-9VD"/>
-                                            <constraint firstAttribute="bottom" secondItem="uiL-Xj-siq" secondAttribute="bottom" constant="8" id="sk6-W8-3xb"/>
+                                            <constraint firstItem="ZW3-3Y-eL9" firstAttribute="width" secondItem="UNU-hJ-XRb" secondAttribute="width" multiplier="0.12" id="Lec-xE-Mv7"/>
+                                            <constraint firstItem="ZW3-3Y-eL9" firstAttribute="leading" secondItem="QHZ-S6-9yd" secondAttribute="trailing" constant="16" id="bUQ-7g-JXk"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZW3-3Y-eL9" secondAttribute="trailing" constant="16" id="hSM-zf-E2K"/>
+                                            <constraint firstItem="ZW3-3Y-eL9" firstAttribute="top" secondItem="UNU-hJ-XRb" secondAttribute="top" constant="8" id="lQI-LT-d5v"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZW3-3Y-eL9" secondAttribute="bottom" constant="8" id="sv3-w7-Cn3"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EF2-k6-nHZ">
@@ -173,6 +177,7 @@
                         <viewLayoutGuide key="safeArea" id="yGI-Tk-AvV"/>
                     </view>
                     <connections>
+                        <outlet property="favouriteButton" destination="ZW3-3Y-eL9" id="djC-G5-gfU"/>
                         <outlet property="latestCollectionView" destination="7QN-y9-2Tr" id="j9N-DH-gkS"/>
                         <outlet property="teamsCollectionView" destination="vaD-aq-RkI" id="Yzq-ov-1ph"/>
                         <outlet property="upcomingCollectionView" destination="EF2-k6-nHZ" id="aGo-5B-YzJ"/>

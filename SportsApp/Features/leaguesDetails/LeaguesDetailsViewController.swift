@@ -10,6 +10,7 @@ import UIKit
 
 class LeaguesDetailsViewController: UIViewController {
 
+    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
     @IBOutlet weak var latestCollectionView: UICollectionView!
     @IBOutlet weak var teamsCollectionView: UICollectionView!
@@ -26,10 +27,13 @@ class LeaguesDetailsViewController: UIViewController {
         let latestEventSubscriper = LatestEventSubscriber()
     /******/
     /***ibrahim**/
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var teamsFlowLayout : UICollectionViewFlowLayout!
     var teams = [Team]()
     let teamsSubscriber = TeamsSubscriber()
     let teamsPresenter = TeamsPresenter()
+    var notFavImage = UIImage(named: "notfav.png")
+    var favImage = UIImage(named: "fav.png")
     /******/
     
     override func viewDidLoad() {
@@ -53,5 +57,21 @@ class LeaguesDetailsViewController: UIViewController {
         /******/
     }
     
-
+    @IBAction func favouriteAction(_ sender: UIButton) {
+        if favouriteButton.currentImage == favImage{
+//            detailsPresenter.deleteFavoriteLeague(id: leagueFromMain?.idLeague ?? "")
+            favouriteButton.setImage(notFavImage, for: .normal)
+            
+        }else{
+//            let result = detailsPresenter.insertIntoFavoriteLeagues(league: leagueFromMain!)
+//            if result{
+                favouriteButton.setImage(favImage, for: .normal)
+//                print(CoreDataHandler.getCoreHandlerInstance().getFavouriteLeagues())
+            
+//            }else{
+//                print("error in adding to favorites")
+//            }
+        }
+    }
+    
 }

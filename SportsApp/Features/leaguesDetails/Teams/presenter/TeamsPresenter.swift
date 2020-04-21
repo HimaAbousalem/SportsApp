@@ -8,7 +8,7 @@
 
 import Foundation
 class TeamsPresenter: TeamsPresenterDelegate{
-    
+   
     func getAllTeams(query: String){
         DataRepository.Instance.getAllTeamsInALeague(query: query)
     }
