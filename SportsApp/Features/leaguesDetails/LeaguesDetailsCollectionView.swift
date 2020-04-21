@@ -22,8 +22,8 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
         return itemsCount
     }
     
-    
-   
+
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

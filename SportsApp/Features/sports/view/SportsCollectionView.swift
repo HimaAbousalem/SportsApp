@@ -31,6 +31,19 @@ extension SportsViewController : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(sports[indexPath.row].name)
+        self.performSegue(withIdentifier: "sportSegue", sender: indexPath.row)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "sportSegue"){
+            let leaguesTableVC = segue.destination as! LeaguesTableViewController
+            let index = sender as! Int
+            leaguesTableVC.query = self.sports[index].name
+            
+        }
+    }
+    
+    @IBAction func unwindToSports(segue:UIStoryboardSegue) {
+        
+    }
 }

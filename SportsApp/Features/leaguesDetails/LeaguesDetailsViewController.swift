@@ -16,7 +16,7 @@ class LeaguesDetailsViewController: UIViewController {
     /***eman**/
         var upComingFlowLayout : UICollectionViewFlowLayout!
         var latestViewFlowLayout : UICollectionViewFlowLayout!
-    
+        var league : League?
         var nextEvents = [Event]()
         let upComingEventPresenter = NextEventPresenter(handler: FetchNextEventsHandler())
         let upComingEventSubscriper = NextEventSubscriber()
@@ -44,6 +44,11 @@ class LeaguesDetailsViewController: UIViewController {
             latestEventPresenter.getLatestEvents()
             self.latestCollectionView.register(UINib(nibName: "LatestEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "latestCell")
             setupLatestCollectionViewSize()
+        
+            let swipeLeft = UISwipeGestureRecognizer()
+            swipeLeft.addTarget(self, action: #selector(backSegue) )
+            swipeLeft.direction = .left
+            self.view!.addGestureRecognizer(swipeLeft)
         /******/
         /***ibrahim**/
             teamsSubscriber.attachView(view: self)
@@ -53,5 +58,7 @@ class LeaguesDetailsViewController: UIViewController {
         /******/
     }
     
-
+    @IBAction func backSegue() {
+        performSegue(withIdentifier: "unWindToLeagues", sender: self)
+    }
 }
