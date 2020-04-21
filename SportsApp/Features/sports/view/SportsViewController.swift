@@ -22,7 +22,6 @@ class SportsViewController: UIViewController, SportViewDelegate {
         NotificationCenter.default.addObserver(self, selector:#selector(recieveSportsData(notification:)), name: .getSports, object: nil)
         // subscriber = SportSubscriber()
         //subscriber.attachView(viewDelegate: self)
-        FetchTeams.Instance.getAllTeams(query: "English%20Premier%20League")
         let presenter = SportsPresenter()
         presenter.getSportsData()
         

@@ -18,4 +18,8 @@ class DataRepository{
         FetchSports.Instance.getAllSports()
     }
     
+    func getAllTeamsInALeague(query: String){
+        FetchTeams.Instance.getAllTeams(query: query)
+    }
+    
 }

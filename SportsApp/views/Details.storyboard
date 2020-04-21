@@ -108,7 +108,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaD-aq-RkI">
-                                        <rect key="frame" x="0.0" y="484" width="375" height="167"/>
+                                        <rect key="frame" x="0.0" y="476" width="375" height="167"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QKf-FO-Tsw">
                                             <size key="itemSize" width="50" height="50"/>
@@ -143,7 +143,7 @@
                                     <constraint firstItem="EF2-k6-nHZ" firstAttribute="leading" secondItem="upV-IL-Xsy" secondAttribute="leading" id="SRa-hu-Z9k"/>
                                     <constraint firstItem="7QN-y9-2Tr" firstAttribute="leading" secondItem="upV-IL-Xsy" secondAttribute="leading" id="WSq-7O-uXo"/>
                                     <constraint firstItem="gqP-Vi-uTP" firstAttribute="top" secondItem="EF2-k6-nHZ" secondAttribute="bottom" constant="8" id="Wyb-cf-MqQ"/>
-                                    <constraint firstItem="vaD-aq-RkI" firstAttribute="top" secondItem="w2z-Yp-EtY" secondAttribute="bottom" constant="8" id="YPO-DC-ZYg"/>
+                                    <constraint firstItem="vaD-aq-RkI" firstAttribute="top" secondItem="w2z-Yp-EtY" secondAttribute="bottom" id="YPO-DC-ZYg"/>
                                     <constraint firstAttribute="bottom" secondItem="vaD-aq-RkI" secondAttribute="bottom" id="fee-Lg-yx4"/>
                                     <constraint firstItem="UNU-hJ-XRb" firstAttribute="leading" secondItem="upV-IL-Xsy" secondAttribute="leading" id="iZW-gs-YCk"/>
                                     <constraint firstItem="vaD-aq-RkI" firstAttribute="leading" secondItem="upV-IL-Xsy" secondAttribute="leading" id="kot-VY-cCS"/>

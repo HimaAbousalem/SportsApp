@@ -11,15 +11,15 @@ import UIKit
 
 extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var data = 0
+        var itemsCount = 0
         if collectionView == upcomingCollectionView{
-            data = nextEvents.count
+            itemsCount = nextEvents.count
         }else if collectionView == latestCollectionView{
-            data = latestEvents.count
+            itemsCount = latestEvents.count
         }else if collectionView == teamsCollectionView{
-            //            return 0
+            itemsCount = teams.count
         }
-        return data
+        return itemsCount
     }
     
     
@@ -64,7 +64,7 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             return cell
         }else if collectionView == teamsCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-            cell.backgroundColor = UIColor.black
+            cell.teamImage.kf.setImage(with: URL(string: teams[indexPath.row].strTeamBadge)!, placeholder: UIImage(named: "noImagePlaceholder.png"))
             return cell
         }
         return UICollectionViewCell()

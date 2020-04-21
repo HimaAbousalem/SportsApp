@@ -16,7 +16,9 @@ class LeagueTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        leagueBadge.layer.cornerRadius = leagueBadge.frame.width/2
+        leagueBadge.clipsToBounds = true
+        leagueBadge.backgroundColor = .black
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

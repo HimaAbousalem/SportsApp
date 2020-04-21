@@ -26,7 +26,10 @@ class LeaguesDetailsViewController: UIViewController {
         let latestEventSubscriper = LatestEventSubscriber()
     /******/
     /***ibrahim**/
-    
+    var teamsFlowLayout : UICollectionViewFlowLayout!
+    var teams = [Team]()
+    let teamsSubscriber = TeamsSubscriber()
+    let teamsPresenter = TeamsPresenter()
     /******/
     
     override func viewDidLoad() {
@@ -43,7 +46,10 @@ class LeaguesDetailsViewController: UIViewController {
             setupLatestCollectionViewSize()
         /******/
         /***ibrahim**/
-        
+            teamsSubscriber.attachView(view: self)
+            teamsPresenter.getAllTeams(query: "English Premier League")
+            self.teamsCollectionView.register(UINib(nibName: "TeamsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "teamsCell")
+            calculateTheTeamsCellSize()
         /******/
     }
     

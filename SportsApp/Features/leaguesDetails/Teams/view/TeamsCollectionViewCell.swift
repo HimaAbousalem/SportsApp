@@ -13,7 +13,9 @@ class TeamsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var teamImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        teamImage.layer.cornerRadius = teamImage.frame.width/2
+        teamImage.clipsToBounds = true
+        teamImage.backgroundColor = .black
     }
 
 }

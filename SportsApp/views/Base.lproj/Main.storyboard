@@ -91,6 +91,14 @@
                                     <segue destination="MAf-Tk-2x2" kind="show" id="GW2-Y8-LmV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GV-ha-8vn">
+                                <rect key="frame" x="135" y="301" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="show sports"/>
+                                <connections>
+                                    <segue destination="7fR-GZ-4VI" kind="show" id="qJm-3z-8sn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lfh-lR-ed5"/>

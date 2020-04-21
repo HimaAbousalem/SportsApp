@@ -17,7 +17,8 @@ class FetchTeams{
         
     }
     func getAllTeams(query: String){
-        let url = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=\(query)"
+        let dataQuery = query.replacingOccurrences(of: " ", with: "%20")
+        let url = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=\(dataQuery)"
         var teams: [Team] = []
         Alamofire.request(url)
             .responseJSON { (response) -> Void in

@@ -52,26 +52,21 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
-        
         let league = leagues[indexPath.row]
-        
-        cell.leagueBadge.roundedImage()
         cell.leagueYoutube.image = UIImage(named: "youtube.png")
         cell.leagueName.text = league.name
         if let badge = league.badge {
-            cell.leagueBadge.kf.setImage(with: URL(string: badge))
+            cell.leagueBadge.kf.setImage(with: URL(string: badge), placeholder: UIImage(named: "noImagePlaceholder.png"))
         }else{
             
         }
        
         return cell
     }
-    
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.size.height * 0.2;
+        return 130
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,7 +76,6 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
         /*if let videoLink = league.youtube{
             let url = URL(string: videoLink)!
             
-         
             }
          */
         
