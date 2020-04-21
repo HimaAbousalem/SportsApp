@@ -22,4 +22,11 @@ class DataRepository{
         FetchTeams.Instance.getAllTeams(query: query)
     }
     
+    func getUpComingEventsInALeague(){
+        FetchNextEventsHandler.Instance.getNextEvents()
+    }
+    
+    func getLatestEventsInALeague(){
+        FetchLatestEventsHandler.Instance.getLatestEvents()
+    }
 }

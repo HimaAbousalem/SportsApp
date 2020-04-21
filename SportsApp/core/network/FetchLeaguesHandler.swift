@@ -11,12 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 class FetchLeaguesHandler {
-    func getLeagues(){
+    
+    func getLeagues(query: String){
         var leagues : [League] = []
         let url = "https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php"
         let sportDummy = "Fighting".replacingOccurrences(of: " ", with: "_")
         print(sportDummy)
-        let parameters = ["s":sportDummy]
+        let parameters = ["s":query]
         
         Alamofire.request(url,parameters: parameters)
             .responseJSON{(response) -> Void in

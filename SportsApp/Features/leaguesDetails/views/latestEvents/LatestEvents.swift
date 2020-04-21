@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension LeaguesDetailsViewController: LatestEventView{
+extension LeaguesDetailsViewController{
     func setLatestEventsEmpty() {
         print("No Latest events !!")
     }

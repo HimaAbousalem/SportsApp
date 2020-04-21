@@ -13,16 +13,31 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
     var leagues = [League]()
     let presenter = LeaguePresenter(handler: FetchLeaguesHandler())
     let subscriper = LeagueSubscriber()
+    var query : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
      
         subscriper.attachView(view: self)
-        presenter.getLeagues()
+        presenter.getLeagues(sportsQuery: query!)
 
+        let swipeLeft = UISwipeGestureRecognizer()
+        swipeLeft.addTarget(self, action: #selector(backSegue) )
+        swipeLeft.direction = .left
+        self.view!.addGestureRecognizer(swipeLeft)
         
     }
+
+    @IBAction func unWindToLeagues(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
+    @IBAction func backSegue() {
+        performSegue(withIdentifier: "unWindToSport", sender: self)
+    }
+    
     func setLeagues(list: [League]) {
         print("######## loaded leagues size ######### \(list.count)")
         self.leagues = list
@@ -72,59 +87,33 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let league = leagues[indexPath.row]
         print("selected !!")
-        
-        /*if let videoLink = league.youtube{
-            let url = URL(string: videoLink)!
-            
-            }
-         */
+        self.performSegue(withIdentifier: "leagueDetailsSegue", sender: self)
         
         }
         
-    }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
+    /// MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        let indexPath = self.tableView.indexPathForSelectedRow
+        var league : League?
+        if let index = indexPath?.row{
+            league = self.leagues[index]
+        }
+        if(segue.identifier == "leagueDetailsSegue"){
+            let leagueDetails = segue.destination as! LeaguesDetailsViewController
+            
+            leagueDetails.league = league
+        }
+        
+}
+}
+
+
+
 
 

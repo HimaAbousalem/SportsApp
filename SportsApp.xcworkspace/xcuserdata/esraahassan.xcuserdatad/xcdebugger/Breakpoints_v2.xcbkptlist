@@ -9,38 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SportsApp/core/network/FetchSports.swift"
-            timestampString = "609018937.343051"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "getAllSports()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsApp/core/repository/DataRepository.swift"
-            timestampString = "609113856.696492"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "getSportsData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SportsApp/sports/SportSubscriber.swift"
             timestampString = "609018937.344138"
             startingColumnNumber = "9223372036854775807"
@@ -90,7 +58,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609116110.2436039"
+                  timestampString = "609196090.097065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -105,7 +73,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609116110.253975"
+                  timestampString = "609196090.101859"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

@@ -47,7 +47,7 @@ class LeaguesDatabaseHandler{
     
     func getLocalLeagues()->[League]{
         var localLeagues = [LocalLeague]()
-        let fetchRequest = NSFetchRequest<LocalLeague>(entityName: "LocalLeagues")
+        let fetchRequest = NSFetchRequest<LocalLeague>(entityName: "LocalLeague")
         do{
             localLeagues = try manageContext!.fetch(fetchRequest)
         }
@@ -58,16 +58,19 @@ class LeaguesDatabaseHandler{
     }
     
     func fetchLeaguesById(id: String)-> NSManagedObject?{
-        var league: NSManagedObject? = nil
+        var league = [NSManagedObject]()
         let predicate = NSPredicate(format: "leagueId ==%@", id)
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalLeagues")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalLeague")
         fetchRequest.predicate = predicate
         do{
-            league = try manageContext!.fetch(fetchRequest)[0]
+            league = try manageContext!.fetch(fetchRequest)
         }catch{
             print("Error in fetch league data")
         }
-        return league
+        if(league.count > 0){
+            return league[0]
+        }
+        return nil
     }
     
     func deleteLeague(id: String){

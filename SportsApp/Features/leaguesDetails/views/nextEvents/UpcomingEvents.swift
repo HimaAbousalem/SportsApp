@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension LeaguesDetailsViewController: NextEventView{
+extension LeaguesDetailsViewController{
     func setNextEventsEmpty() {
         print("No Up coming events yet!!")
     }

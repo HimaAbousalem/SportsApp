@@ -14,7 +14,7 @@ class LeaguePresenter{
         self.handler = handler
     }
     
-    func getLeagues(){
-        self.handler.getLeagues()
+    func getLeagues(sportsQuery: String){
+        self.handler.getLeagues(query: sportsQuery)
     }
 }

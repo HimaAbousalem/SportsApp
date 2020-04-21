@@ -16,9 +16,9 @@ extension LocalLeague {
         return NSFetchRequest<LocalLeague>(entityName: "LocalLeague")
     }
 
+    @NSManaged public var leagueId: String?
     @NSManaged public var leagueImage: String?
     @NSManaged public var leagueName: String?
     @NSManaged public var leagueYoutube: String?
-    @NSManaged public var leagueId: String?
 
 }

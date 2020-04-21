@@ -12,6 +12,11 @@ import SwiftyJSON
 
 class FetchLatestEventsHandler {
     
+    static let Instance = FetchLatestEventsHandler()
+    
+    private init(){
+        
+    }
     //we need name , date , time
     func getLatestEvents(){
         var events : [Event] = []
@@ -39,7 +44,7 @@ class FetchLatestEventsHandler {
                      events.append(event)
                      debugPrint("\(event.homeTeam!) , \(event.awayTeam!) , \(event.homeScore!) ,\(event.awayScore!) ,\(event.date) , \(event.time)")
                     }
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "latestEventsLoaded"), object:nil, userInfo: ["latestEvents": events])
+                    NotificationCenter.default.post(name: .getLatestEvents, object:nil, userInfo: ["latestEvents": events])
                     
                 case .failure(let error):
                     print("error !")

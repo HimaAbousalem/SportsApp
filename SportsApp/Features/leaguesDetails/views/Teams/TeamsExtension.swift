@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-extension LeaguesDetailsViewController: TeamsViewDelegate{
-    func setEmpty() {
-        print("Hi")
-    }
+extension LeaguesDetailsViewController{
     
+    func setEmptyTeams() {
+        print("There\'s an error while fetching the data")
+    }
     
     func calculateTheTeamsCellSize(){
         if teamsFlowLayout == nil{
@@ -25,7 +25,6 @@ extension LeaguesDetailsViewController: TeamsViewDelegate{
             teamsFlowLayout.sectionInset = UIEdgeInsets(top: lineSpacing, left: lineSpacing, bottom: lineSpacing, right: lineSpacing)
             teamsFlowLayout.scrollDirection = .horizontal
             teamsCollectionView.setCollectionViewLayout(teamsFlowLayout, animated: true)
-            
         }
     }
     

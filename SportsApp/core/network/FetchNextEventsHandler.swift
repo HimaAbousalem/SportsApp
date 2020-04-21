@@ -11,7 +11,11 @@ import Alamofire
 import SwiftyJSON
 
 class FetchNextEventsHandler {
+    static let Instance = FetchNextEventsHandler()
     
+    private init(){
+        
+    }
     //we need name , date , time
     func getNextEvents(){
         var events : [Event] = []
@@ -37,7 +41,7 @@ class FetchNextEventsHandler {
                         events.append(event)
                         debugPrint("\(event.name!) ,\(event.date) ,\(event.time)")
                     }
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NextEventsLoaded"), object:nil, userInfo: ["nextEvents": events])
+                    NotificationCenter.default.post(name: .getUpcomingEvents, object:nil, userInfo: ["nextEvents": events])
                     
                 case .failure(let error):
                     print("error !")
