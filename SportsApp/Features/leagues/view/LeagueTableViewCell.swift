@@ -10,10 +10,10 @@ import UIKit
 
 class LeagueTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var leagueYoutube: UIImageView!
     @IBOutlet weak var leagueName: UILabel!
     @IBOutlet weak var leagueBadge: UIImageView!
-    
+    var youtubeLink: String?
+    var youtubeClosure: ((String)->Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         leagueBadge.layer.cornerRadius = leagueBadge.frame.width/2
@@ -23,8 +23,13 @@ class LeagueTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
+    @IBAction func openYoutubLink(_ sender: UIButton) {
+        let url = NSURL(string:"https://\(youtubeLink ?? "")")! as URL
+        if UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else{
+            youtubeClosure!("There is no youtube link!")
+        }
+    }
 }

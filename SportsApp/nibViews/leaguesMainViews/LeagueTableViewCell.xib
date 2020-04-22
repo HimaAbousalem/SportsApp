@@ -6,60 +6,60 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="LeagueTableViewCell" customModule="SportsApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="130.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r9S-iS-mvk">
-                        <rect key="frame" x="16" y="16.5" width="100" height="100"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="7qs-4F-DZs"/>
-                            <constraint firstAttribute="width" secondItem="r9S-iS-mvk" secondAttribute="height" multiplier="1:1" id="Ihp-Xs-D84"/>
-                            <constraint firstAttribute="height" constant="100" id="bha-go-rQ9"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-pn-TLh">
-                        <rect key="frame" x="240.5" y="38.5" width="54.5" height="54.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="3wU-pn-TLh" secondAttribute="height" multiplier="1:1" id="XcJ-DS-zoh"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKG-rb-Qhj">
-                        <rect key="frame" x="132" y="56" width="92.5" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="3wU-pn-TLh" secondAttribute="bottom" constant="39.5" id="4qN-yy-1Bb"/>
-                    <constraint firstAttribute="bottom" secondItem="r9S-iS-mvk" secondAttribute="bottom" constant="16" id="Bvu-3I-GVC"/>
-                    <constraint firstItem="3wU-pn-TLh" firstAttribute="leading" secondItem="MKG-rb-Qhj" secondAttribute="trailing" constant="16" id="DDf-7L-WH9"/>
-                    <constraint firstItem="r9S-iS-mvk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NMz-bU-Cg3"/>
-                    <constraint firstItem="MKG-rb-Qhj" firstAttribute="leading" secondItem="r9S-iS-mvk" secondAttribute="trailing" constant="16" id="ORX-fF-raD"/>
-                    <constraint firstItem="r9S-iS-mvk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="RO9-eX-wEr"/>
-                    <constraint firstItem="3wU-pn-TLh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="38" id="foP-uT-say"/>
-                    <constraint firstItem="MKG-rb-Qhj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gTe-wk-ZRb"/>
-                    <constraint firstAttribute="trailing" secondItem="3wU-pn-TLh" secondAttribute="trailing" constant="25" id="i3K-TX-M4r"/>
-                </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LeagueTableViewCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="116"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Rt-YE-ibs">
+                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Om2-5u-AYD"/>
+                        <constraint firstAttribute="height" constant="100" id="oab-UN-3hu"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tw5-Gz-TTz">
+                    <rect key="frame" x="124" y="58.5" width="161.5" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnq-Yh-jkm">
+                    <rect key="frame" x="301.5" y="32.5" width="51.5" height="51"/>
+                    <state key="normal" image="youtube"/>
+                    <connections>
+                        <action selector="openYoutubLink:" destination="iN0-l3-epB" eventType="touchUpInside" id="mwQ-BP-Yao"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9Rt-YE-ibs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="EeZ-j9-i6v"/>
+                <constraint firstItem="Nnq-Yh-jkm" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.44" id="FGg-ff-Vvj"/>
+                <constraint firstItem="tw5-Gz-TTz" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Fdo-QS-0VU"/>
+                <constraint firstItem="Nnq-Yh-jkm" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.14" id="NcL-4i-ZJy"/>
+                <constraint firstAttribute="trailing" secondItem="Nnq-Yh-jkm" secondAttribute="trailing" constant="16" id="Xl2-dM-rL9"/>
+                <constraint firstItem="9Rt-YE-ibs" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aH9-ug-dOL"/>
+                <constraint firstItem="Nnq-Yh-jkm" firstAttribute="leading" secondItem="tw5-Gz-TTz" secondAttribute="trailing" constant="16" id="hps-nu-uLT"/>
+                <constraint firstItem="tw5-Gz-TTz" firstAttribute="leading" secondItem="9Rt-YE-ibs" secondAttribute="trailing" constant="16" id="mSm-Wz-kEX"/>
+                <constraint firstItem="Nnq-Yh-jkm" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ppt-m9-QBI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="leagueBadge" destination="r9S-iS-mvk" id="SqX-z6-SgV"/>
-                <outlet property="leagueName" destination="MKG-rb-Qhj" id="mwg-lZ-4ef"/>
-                <outlet property="leagueYoutube" destination="3wU-pn-TLh" id="j2w-Ke-DYt"/>
+                <outlet property="leagueBadge" destination="9Rt-YE-ibs" id="hva-Ja-GcG"/>
+                <outlet property="leagueName" destination="tw5-Gz-TTz" id="Wv6-fy-KlA"/>
             </connections>
-            <point key="canvasLocation" x="18" y="124.5"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="-100.5" y="338"/>
+        </view>
     </objects>
+    <resources>
+        <image name="youtube" width="512" height="512"/>
+    </resources>
 </document>

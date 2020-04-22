@@ -11,14 +11,13 @@ class LeagueSubscriber{
     weak private var leagueView: LeagueView?
     
     init() {
-        NotificationCenter.default.addObserver(self, selector:#selector(loadLeagues(n:)), name: NSNotification.Name.init("LeaguesLoaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(loadLeagues(n:)), name: .getLeagues, object: nil)
     }
     
     func attachView(view: LeagueView){
         self.leagueView = view
     }
-    
-    
+        
     @objc func loadLeagues(n:NSNotification){
         let leagues = (n.userInfo?["leagues"] as? [League])!
         print("*******loaded leagues size ******* \(leagues.count)")

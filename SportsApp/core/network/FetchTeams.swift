@@ -38,7 +38,6 @@ class FetchTeams{
         for team in jsonData["teams"].arrayValue{
             teams.append(Team(idTeam: team["idTeam"].stringValue, strTeam: team["strTeam"].stringValue, intFormedYear: team["intFormedYear"].stringValue, strStadium: team["strStadium"].stringValue, strStadiumThumb: team["strStadiumThumb"].stringValue, strStadiumLocation: team["strStadiumLocation"].stringValue, strTeamBadge: team["strTeamBadge"].stringValue, strYoutube: team["strYoutube"].stringValue, strCountry: team["strCountry"].stringValue))
         }
-        debugPrint(teams[0])
         return teams
     }
 }

@@ -69,14 +69,10 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath) as! LeagueTableViewCell
         let league = leagues[indexPath.row]
-        cell.leagueYoutube.image = UIImage(named: "youtube.png")
         cell.leagueName.text = league.name
-        if let badge = league.badge {
-            cell.leagueBadge.kf.setImage(with: URL(string: badge), placeholder: UIImage(named: "noImagePlaceholder.png"))
-        }else{
-            
-        }
-       
+        cell.youtubeLink = league.youtube
+        cell.leagueBadge.kf.setImage(with: URL(string: league.badge), placeholder: UIImage(named: "noImagePlaceholder.png"))
+    
         return cell
     }
 

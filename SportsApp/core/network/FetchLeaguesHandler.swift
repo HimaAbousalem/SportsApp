@@ -30,17 +30,12 @@ class FetchLeaguesHandler {
                             id: league["idLeague"].stringValue,
                             name:league["strLeague"].stringValue,
                             sport:league["strSport"].stringValue,
-                            youtube:league["strYoutube"].string,
-                            badge:league["strBadge"].string
+                            youtube:league["strYoutube"].stringValue,
+                            badge:league["strBadge"].stringValue
                         )
                         leagues.append(league)
-                        
-                        //debugPrint("\(league.id),\(league.name), \(league.sport),\(league.youtube!),\(league.badge!)")
-
                     }
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LeaguesLoaded"),object: nil, userInfo: ["leagues": leagues])
-                    
-                
+                    NotificationCenter.default.post(name: .getLeagues,object: nil, userInfo: ["leagues": leagues])
                 case .failure(let error):
                     print(error)
                 }

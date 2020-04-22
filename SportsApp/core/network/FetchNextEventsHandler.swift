@@ -34,15 +34,13 @@ class FetchNextEventsHandler {
                             name: event["strEvent"].stringValue,
                             date: event["strDate"].stringValue,
                             time: event["strTime"].stringValue,
-                            homeTeam: nil,
-                            awayTeam: nil,
-                            homeScore: nil,
-                            awayScore: nil)
+                            homeTeam: "",
+                            awayTeam: "",
+                            homeScore: "",
+                            awayScore: "")
                         events.append(event)
-                        debugPrint("\(event.name!) ,\(event.date) ,\(event.time)")
                     }
                     NotificationCenter.default.post(name: .getUpcomingEvents, object:nil, userInfo: ["nextEvents": events])
-                    
                 case .failure(let error):
                     print("error !")
                 }

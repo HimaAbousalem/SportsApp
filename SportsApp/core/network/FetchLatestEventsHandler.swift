@@ -33,7 +33,7 @@ class FetchLatestEventsHandler {
                     //debugPrint(json)
                     for event in json["events"].arrayValue {
                      let event = Event (
-                         name: nil,
+                         name: "",
                          date: event["strDate"].stringValue,
                          time: event["strTime"].stringValue,
                          homeTeam: event["strHomeTeam"].stringValue,
@@ -42,10 +42,8 @@ class FetchLatestEventsHandler {
                          awayScore: event["intAwayScore"].stringValue)
                         
                      events.append(event)
-                     debugPrint("\(event.homeTeam!) , \(event.awayTeam!) , \(event.homeScore!) ,\(event.awayScore!) ,\(event.date) , \(event.time)")
                     }
                     NotificationCenter.default.post(name: .getLatestEvents, object:nil, userInfo: ["latestEvents": events])
-                    
                 case .failure(let error):
                     print("error !")
                 }
