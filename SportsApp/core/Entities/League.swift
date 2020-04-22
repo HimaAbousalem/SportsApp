@@ -11,6 +11,6 @@ struct League{
     var id: String
     var name: String
     var sport: String
-    var youtube: String?
-    var badge: String?
+    var youtube: String
+    var badge: String
 }

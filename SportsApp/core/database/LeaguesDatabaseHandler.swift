@@ -91,7 +91,7 @@ class LeaguesDatabaseHandler{
     
     func LeaguesObjectMapper(localLeague: LocalLeague?)->League?{
         if localLeague != nil{
-            return League(id: (localLeague?.leagueId)!, name: (localLeague?.leagueName)!, sport: "", youtube: localLeague?.leagueYoutube!, badge: localLeague?.leagueImage!)
+            return League(id: (localLeague?.leagueId)!, name: (localLeague?.leagueName)!, sport: "", youtube: (localLeague?.leagueYoutube!)!, badge: (localLeague?.leagueImage!)!)
         }
         return nil
     }

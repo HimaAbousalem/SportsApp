@@ -33,9 +33,9 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCell", for: indexPath) as! UpComingEventsCollectionViewCell
             let event = nextEvents[indexPath.row]
             let name = event.name
-            let teams = name?.components(separatedBy: "vs")
-            cell.team1.text = teams?[0]
-            cell.team2.text = teams?[1]
+            let teams = name.components(separatedBy: "vs")
+            cell.team1.text = teams[0]
+            cell.team2.text = teams[1]
             cell.date.text = event.date
             cell.time.text = event.time
             cell.backgroundColor = UIColor.red
