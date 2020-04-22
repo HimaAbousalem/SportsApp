@@ -69,4 +69,28 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == teamsCollectionView{
+            print(teams[indexPath.row].strTeam)
+            self.performSegue(withIdentifier: "teamDetailsSegue", sender: indexPath.row)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "teamDetailsSegue"){
+            let teamDetailsVC = segue.destination as! TeamDetailsViewController
+            var team : Team?
+            if let index = sender{
+                team = teams[index as! Int]
+            }
+            teamDetailsVC.team = team
+            
+        }
+    }
+    
+    @IBAction func unWindToLeaguesDetails(segue: UIStoryboardSegue){
+        
+    }
 }
