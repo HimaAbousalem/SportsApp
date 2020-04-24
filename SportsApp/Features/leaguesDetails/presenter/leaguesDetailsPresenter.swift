@@ -17,12 +17,12 @@ class LeaguesDetailsPresenter: LeaguesDetailsPresenterDelegate{
         DataRepository.Instance.getAllTeamsInALeague(query: query)
     }
     
-    func getNextEvents() {
-        DataRepository.Instance.getUpComingEventsInALeague()
+    func getNextEvents(query: String) {
+        DataRepository.Instance.getUpComingEventsInALeague(query: query)
     }
     
-    func getLatestEvents() {
-        DataRepository.Instance.getLatestEventsInALeague()
+    func getLatestEvents(query: String) {
+        DataRepository.Instance.getLatestEventsInALeague(query: query)
     }
     func saveLeagueToDatabase(league: League) {
         localLeagues?.saveLocalLeague(leagueObject: league)

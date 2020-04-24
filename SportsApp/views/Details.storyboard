@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sMt-95-Nwt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sMt-95-Nwt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -184,6 +184,7 @@
                         <outlet property="upcomingCollectionView" destination="EF2-k6-nHZ" id="aGo-5B-YzJ"/>
                         <segue destination="wSK-TQ-ZjE" kind="unwind" identifier="unWindToLeagues" unwindAction="unWindToLeaguesWithSegue:" id="7D2-kJ-pR7"/>
                         <segue destination="rY8-TN-prK" kind="show" identifier="teamDetailsSegue" id="e6P-q5-LGL"/>
+                        <segue destination="wSK-TQ-ZjE" kind="unwind" identifier="unWindToFavourite" unwindAction="unwindToFavouriteWithSegue:" id="Xtk-H1-Jns"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bk3-xf-Jfy" userLabel="First Responder" sceneMemberID="firstResponder"/>

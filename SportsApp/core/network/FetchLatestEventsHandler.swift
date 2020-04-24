@@ -18,12 +18,11 @@ class FetchLatestEventsHandler {
         
     }
     //we need name , date , time
-    func getLatestEvents(){
+    func getLatestEvents(query: String){
         var events : [Event] = []
         let url = "https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php"
         
-        let leagueIdDummy = "4328"
-        let parameters = ["id":leagueIdDummy]
+        let parameters = ["id":query]
         
         Alamofire.request(url,parameters: parameters)
             .responseJSON{(response) -> Void in

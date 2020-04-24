@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Sports-->
         <scene sceneID="bcx-E5-HMi">
             <objects>
                 <viewController id="TcY-Ni-jf9" customClass="SportsViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="um4-sg-fmS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="KN1-fP-a04"/>
+                    <tabBarItem key="tabBarItem" title="Sports" image="trophy" id="KN1-fP-a04"/>
                     <connections>
                         <outlet property="sportsCollectionView" destination="mzx-JI-wYz" id="2fV-8B-dhD"/>
                         <segue destination="0BE-aw-Ncn" kind="show" identifier="sportSegue" id="7rt-Dt-M71"/>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="2045" y="354"/>
         </scene>
-        <!--Item-->
+        <!--Favourites Table View Controller-->
         <scene sceneID="cMP-08-2dD">
             <objects>
                 <tableViewController id="ZeF-26-AeG" customClass="FavouritesTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="ZeF-26-AeG" id="8bZ-bV-Sn7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="UdL-cu-CPP"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="UdL-cu-CPP"/>
                     <connections>
                         <segue destination="MAf-Tk-2x2" kind="show" identifier="favLeagueSegue" id="V4o-fZ-CcR"/>
                     </connections>
@@ -172,6 +172,9 @@
             <point key="canvasLocation" x="495" y="253"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="trophy" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V4o-fZ-CcR"/>
     </inferredMetricsTieBreakers>

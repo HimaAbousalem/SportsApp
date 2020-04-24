@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "FavouritesTableViewController.tableView(_:cellForRowAt:):FavouriteTableViewLogic.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "favouriteLeagues">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

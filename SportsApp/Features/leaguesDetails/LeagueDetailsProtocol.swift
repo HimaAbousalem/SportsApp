@@ -10,8 +10,8 @@ import Foundation
 
 protocol LeaguesDetailsPresenterDelegate{
     func getAllTeams(query: String)
-    func getNextEvents()
-    func getLatestEvents()
+    func getNextEvents(query: String)
+    func getLatestEvents(query: String)
     func saveLeagueToDatabase(league: League)
     func isFavouite(leagueId: String) -> Bool
     func deleteFromFavourite(leagueId: String)

@@ -102,7 +102,7 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
         }
         if(segue.identifier == "leagueDetailsSegue"){
             let leagueDetails = segue.destination as! LeaguesDetailsViewController
-            
+            leagueDetails.destinaton = "unWindToLeagues"
             leagueDetails.league = league
         }
         

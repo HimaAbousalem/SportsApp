@@ -99,7 +99,7 @@ class LeaguesDatabaseHandler{
     func LeaguesListMapper(localLeagues: [LocalLeague])->[League]{
         var leagues = [League]()
         for league in localLeagues{
-            leagues.append(League(id: league.leagueId!, name: league.leagueName!, sport: "", youtube: league.leagueYoutube ?? "", badge: league.leagueYoutube ?? ""))
+            leagues.append(League(id: league.leagueId!, name: league.leagueName!, sport: "", youtube: league.leagueYoutube ?? "", badge: league.leagueImage ?? ""))
         }
         return leagues
     }

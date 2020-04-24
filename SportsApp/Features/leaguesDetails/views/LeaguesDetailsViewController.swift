@@ -29,16 +29,17 @@ class LeaguesDetailsViewController: UIViewController, LeaguesDetailsViewDelegate
     var notFavImage = UIImage(named: "notfav.png")
     var favImage = UIImage(named: "fav.png")
     
+    var destinaton: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         leagueDetailsPresenter = LeaguesDetailsPresenter.init(coreData: appDelegate.localLeagues!)
     
         leagueDetailsSubscriber.attachView(view: self)
-        leagueDetailsPresenter!.getNextEvents()
+        leagueDetailsPresenter!.getNextEvents(query: (league?.id)!)
         self.upcomingCollectionView.register(UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "upcomingCell")
         setUpUpcomingCollectionViewSize()
         
-        leagueDetailsPresenter!.getLatestEvents()
+        leagueDetailsPresenter!.getLatestEvents(query: (league?.id)!)
         self.latestCollectionView.register(UINib(nibName: "LatestEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "latestCell")
         setupLatestCollectionViewSize()
         
@@ -60,16 +61,15 @@ class LeaguesDetailsViewController: UIViewController, LeaguesDetailsViewDelegate
     
     @IBAction func favouriteAction(_ sender: UIButton) {
         if favouriteButton.currentImage == favImage{
-            leagueDetailsPresenter?.deleteFromFavourite(leagueId: (league?.id) ?? "")
             favouriteButton.setImage(notFavImage, for: .normal)
-            
+            leagueDetailsPresenter?.deleteFromFavourite(leagueId: (league?.id) ?? "")
         }else{
-            leagueDetailsPresenter?.saveLeagueToDatabase(league: league!)
             favouriteButton.setImage(favImage, for: .normal)
+            leagueDetailsPresenter?.saveLeagueToDatabase(league: league!)
         }
     }
     
     @IBAction func backSegue() {
-        performSegue(withIdentifier: "unWindToLeagues", sender: self)
+        performSegue(withIdentifier: destinaton!, sender: self)
     }
 }
