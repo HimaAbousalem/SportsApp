@@ -38,14 +38,16 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             cell.team2.text = teams[1]
             cell.date.text = event.date
             cell.time.text = event.time
-            cell.backgroundColor = UIColor.red
+            cell.layer.cornerRadius = 30
+            cell.layer.borderWidth = 1
             return cell
         }else if collectionView == latestCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventsCollectionViewCell
             let event = latestEvents[indexPath.row]
             cell.team1.text = event.homeTeam
             cell.team2.text = event.awayTeam
-            
+            cell.layer.cornerRadius = 30
+            cell.layer.borderWidth = 1
             if event.homeScore != "" {
                 cell.score1.text = event.homeScore
             }

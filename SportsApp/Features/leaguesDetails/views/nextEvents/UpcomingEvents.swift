@@ -14,7 +14,7 @@ extension LeaguesDetailsViewController{
         print("No Up coming events yet!!")
     }
     func setNextEvents(list: [Event]) {
-        self.nextEvents = list.filter{upcoming in return upcoming.homeTeam != "null" && upcoming.homeTeam != "" && upcoming.awayTeam != "null" && upcoming.awayTeam != ""}
+        self.nextEvents = list//.filter{upcoming in return upcoming.homeTeam != "null" && upcoming.homeTeam != "" && upcoming.awayTeam != "null" && upcoming.awayTeam != ""}
         self.upcomingCollectionView.reloadData()
     }
     

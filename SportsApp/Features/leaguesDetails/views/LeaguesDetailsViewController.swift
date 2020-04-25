@@ -33,8 +33,8 @@ class LeaguesDetailsViewController: UIViewController, LeaguesDetailsViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         leagueDetailsPresenter = LeaguesDetailsPresenter.init(coreData: appDelegate.localLeagues!)
-    
         leagueDetailsSubscriber.attachView(view: self)
+        
         leagueDetailsPresenter!.getNextEvents(query: (league?.id)!)
         self.upcomingCollectionView.register(UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "upcomingCell")
         setUpUpcomingCollectionViewSize()

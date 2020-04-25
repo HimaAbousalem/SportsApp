@@ -10,6 +10,7 @@ import UIKit
 
 class SportsViewController: UIViewController, SportViewDelegate {
   
+    @IBOutlet weak var noInternetView: UIView!
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     var sports: [Sport] = []
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -23,7 +24,12 @@ class SportsViewController: UIViewController, SportViewDelegate {
         // subscriber = SportSubscriber()
         //subscriber.attachView(viewDelegate: self)
         let presenter = SportsPresenter()
-        presenter.getSportsData()
+        if Reachability.isConnectedToNetwork() {
+            presenter.getSportsData()
+            noInternetView.isHidden = true
+        }else{
+            noInternetView.isHidden = false
+        }
         
     }
     

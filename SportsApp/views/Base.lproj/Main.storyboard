@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +43,21 @@
                                     <outlet property="delegate" destination="TcY-Ni-jf9" id="jXy-L6-cBn"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-FK-Aek">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nointernet" translatesAutoresizingMaskIntoConstraints="NO" id="0Zb-Rn-eh6">
+                                        <rect key="frame" x="18.5" y="209.5" width="337.5" height="179"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Zb-Rn-eh6" firstAttribute="height" secondItem="CrP-FK-Aek" secondAttribute="height" multiplier="0.3" id="D2F-HP-khR"/>
+                                    <constraint firstItem="0Zb-Rn-eh6" firstAttribute="centerY" secondItem="CrP-FK-Aek" secondAttribute="centerY" id="iUZ-cu-J0R"/>
+                                    <constraint firstItem="0Zb-Rn-eh6" firstAttribute="width" secondItem="CrP-FK-Aek" secondAttribute="width" multiplier="0.9" id="qHQ-YG-jof"/>
+                                    <constraint firstItem="0Zb-Rn-eh6" firstAttribute="centerX" secondItem="CrP-FK-Aek" secondAttribute="centerX" id="qm0-i1-pgM"/>
+                                </constraints>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-wr-6Lt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -59,6 +75,10 @@
                             <constraint firstItem="um4-sg-fmS" firstAttribute="leading" secondItem="9A6-wr-6Lt" secondAttribute="leading" id="CJg-zW-Ok0"/>
                             <constraint firstItem="mzx-JI-wYz" firstAttribute="bottom" secondItem="um4-sg-fmS" secondAttribute="bottom" id="D0K-L7-2ZG"/>
                             <constraint firstItem="mzx-JI-wYz" firstAttribute="top" secondItem="9A6-wr-6Lt" secondAttribute="bottom" constant="4" id="ECZ-bs-dQD"/>
+                            <constraint firstItem="CrP-FK-Aek" firstAttribute="leading" secondItem="um4-sg-fmS" secondAttribute="leading" id="HTp-1H-3J7"/>
+                            <constraint firstItem="CrP-FK-Aek" firstAttribute="top" secondItem="um4-sg-fmS" secondAttribute="top" id="NOn-T8-9fm"/>
+                            <constraint firstItem="CrP-FK-Aek" firstAttribute="trailing" secondItem="um4-sg-fmS" secondAttribute="trailing" id="OYG-yU-TBI"/>
+                            <constraint firstItem="um4-sg-fmS" firstAttribute="bottom" secondItem="CrP-FK-Aek" secondAttribute="bottom" id="QiK-cq-jD5"/>
                             <constraint firstItem="mzx-JI-wYz" firstAttribute="trailing" secondItem="um4-sg-fmS" secondAttribute="trailing" id="S5O-65-Mj1"/>
                             <constraint firstItem="um4-sg-fmS" firstAttribute="trailing" secondItem="9A6-wr-6Lt" secondAttribute="trailing" id="i0V-ga-RMM"/>
                             <constraint firstItem="9A6-wr-6Lt" firstAttribute="top" secondItem="um4-sg-fmS" secondAttribute="top" id="k4z-bP-j4D"/>
@@ -68,6 +88,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sports" image="trophy" id="KN1-fP-a04"/>
                     <connections>
+                        <outlet property="noInternetView" destination="CrP-FK-Aek" id="nnK-vK-lge"/>
                         <outlet property="sportsCollectionView" destination="mzx-JI-wYz" id="2fV-8B-dhD"/>
                         <segue destination="0BE-aw-Ncn" kind="show" identifier="sportSegue" id="7rt-Dt-M71"/>
                     </connections>
@@ -173,9 +194,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="nointernet" width="512" height="512"/>
         <image name="trophy" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V4o-fZ-CcR"/>
+        <segue reference="a75-3r-TWU"/>
     </inferredMetricsTieBreakers>
 </document>

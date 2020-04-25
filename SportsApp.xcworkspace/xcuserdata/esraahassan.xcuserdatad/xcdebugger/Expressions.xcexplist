@@ -3,6 +3,12 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LeaguesDetailsViewController.collectionView(_:cellForItemAt:):LeaguesDetailsCollectionView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FavouritesTableViewController.showSavedLeagues(leagues:):FavouritesTableViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "LeaguesDatabaseHandler.fetchLeaguesById(id:):LeaguesDatabaseHandler.swift">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +21,14 @@
          <PersistentStrings>
             <PersistentString
                value = "favouriteLeagues">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LeaguesDetailsViewController.viewDidLoad():LeaguesDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "league">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

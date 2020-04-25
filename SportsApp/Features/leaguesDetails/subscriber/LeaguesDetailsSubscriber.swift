@@ -35,7 +35,7 @@ class LeaguesDetailsSubscriber{
         
     @objc func loadLatestEvents(n:NSNotification){
         let events = (n.userInfo?["latestEvents"] as? [Event])!
-        print("*******loaded events size ******* \(events.count)")
+        print("*******loaded latest events size ******* \(events.count)")
         if(events.count > 0){
             self.detailsView?.setLatestEvents(list: events)
         }else{
@@ -45,7 +45,7 @@ class LeaguesDetailsSubscriber{
     
     @objc func loadNextEvents(n:NSNotification){
         let events = (n.userInfo?["nextEvents"] as? [Event])!
-        print("*******loaded events size ******* \(events.count)")
+        print("*******loaded next events size ******* \(events.count)")
         if(events.count > 0){
             self.detailsView?.setNextEvents(list: events)
         }else{
