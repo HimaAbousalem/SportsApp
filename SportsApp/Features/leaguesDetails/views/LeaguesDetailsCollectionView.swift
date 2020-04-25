@@ -64,7 +64,10 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             return cell
         }else if collectionView == teamsCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-            cell.teamImage.kf.setImage(with: URL(string: teams[indexPath.row].strTeamBadge)!, placeholder: UIImage(named: "noImagePlaceholder.png"))
+            if let badge = teams[indexPath.row].strTeamBadge{
+                cell.teamImage.kf.setImage(with: URL(string: badge), placeholder: UIImage(named: "noImagePlaceholder.png"))
+            }
+
             return cell
         }
         return UICollectionViewCell()

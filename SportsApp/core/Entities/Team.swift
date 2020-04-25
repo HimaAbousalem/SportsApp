@@ -15,7 +15,7 @@ struct Team{
     let strStadium: String
     let strStadiumThumb: String
     let strStadiumLocation: String
-    let strTeamBadge: String
+    var strTeamBadge: String?
     let strYoutube: String
     let strCountry: String
 }
