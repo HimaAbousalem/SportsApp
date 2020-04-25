@@ -58,7 +58,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609473521.29143"
+                  timestampString = "609542730.639515"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -73,7 +73,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609473521.297101"
+                  timestampString = "609542730.643896"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -144,6 +144,86 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "showSavedLeagues(leagues:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsApp/Features/leaguesDetails/views/latestEvents/LatestEvents.swift"
+            timestampString = "609543727.540627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "setLatestEvents(list:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SportsApp.LeaguesDetailsViewController.setLatestEvents(list: Swift.Array&lt;SportsApp.Event&gt;) -&gt; ()"
+                  moduleName = "SportsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/Features/leaguesDetails/views/latestEvents/LatestEvents.swift"
+                  timestampString = "609542730.689697"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SportsApp.Event) -&gt; Swift.Bool in SportsApp.LeaguesDetailsViewController.setLatestEvents(list: Swift.Array&lt;SportsApp.Event&gt;) -&gt; ()"
+                  moduleName = "SportsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/Features/leaguesDetails/views/latestEvents/LatestEvents.swift"
+                  timestampString = "609542730.693756"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsApp/Features/leaguesDetails/views/latestEvents/LatestEvents.swift"
+            timestampString = "609543727.540728"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setLatestEvents(list:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportsApp/Features/leaguesDetails/views/latestEvents/LatestEvents.swift"
+            timestampString = "609543727.540783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setupLatestCollectionViewSize()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

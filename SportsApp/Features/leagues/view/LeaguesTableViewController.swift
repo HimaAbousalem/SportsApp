@@ -20,7 +20,15 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
         tableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: "leagueCell")
      
         subscriper.attachView(view: self)
-        presenter.getLeagues(sportsQuery: query!)
+        
+        if(Reachability.isConnectedToNetwork()){
+            presenter.getLeagues(sportsQuery: query!)
+        }else{
+            tableView.isHidden = true
+            let noInternetView = storyboard?.instantiateViewController(withIdentifier: "noInternet")
+            self.view.addSubview((noInternetView?.view)!)
+        }
+        
 
         let swipeLeft = UISwipeGestureRecognizer()
         swipeLeft.addTarget(self, action: #selector(backSegue) )
@@ -82,7 +90,6 @@ class LeaguesTableViewController: UITableViewController,LeagueView{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let league = leagues[indexPath.row]
-        print("selected !!")
         self.performSegue(withIdentifier: "leagueDetailsSegue", sender: self)
         
         }

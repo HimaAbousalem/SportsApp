@@ -13,10 +13,15 @@ extension LeaguesDetailsViewController{
     func setLatestEventsEmpty() {
         print("No Latest events !!")
     }
+    
     func setLatestEvents(list: [Event]) {
      self.latestEvents = list.filter{latest in return latest.homeTeam != "null" && latest.homeTeam != "" && latest.awayTeam != "null" && latest.awayTeam != ""}
+        if(self.latestEvents.count != 0){
+            latestCollectionView.backgroundView = nil
+        }
         self.latestCollectionView.reloadData()
      }
+    
     func setupLatestCollectionViewSize(){
         if latestViewFlowLayout == nil{
             let lineSpacing:CGFloat = 1

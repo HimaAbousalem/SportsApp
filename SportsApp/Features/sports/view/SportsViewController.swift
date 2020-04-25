@@ -14,6 +14,7 @@ class SportsViewController: UIViewController, SportViewDelegate {
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     var sports: [Sport] = []
     var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    let presenter = SportsPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +24,16 @@ class SportsViewController: UIViewController, SportViewDelegate {
         NotificationCenter.default.addObserver(self, selector:#selector(recieveSportsData(notification:)), name: .getSports, object: nil)
         // subscriber = SportSubscriber()
         //subscriber.attachView(viewDelegate: self)
-        let presenter = SportsPresenter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if Reachability.isConnectedToNetwork() {
             presenter.getSportsData()
             noInternetView.isHidden = true
         }else{
             noInternetView.isHidden = false
         }
-        
     }
     
     @objc func recieveSportsData(notification: NSNotification){

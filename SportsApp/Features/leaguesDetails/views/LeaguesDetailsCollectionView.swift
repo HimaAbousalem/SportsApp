@@ -34,8 +34,12 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             let event = nextEvents[indexPath.row]
             let name = event.name
             let teams = name.components(separatedBy: "vs")
-            cell.team1.text = teams[0]
-            cell.team2.text = teams[1]
+            if(teams.count == 2){
+                cell.team1.text = teams[0]
+                cell.team2.text = teams[1]
+            }else{
+                cell.team1.text = teams[0]
+            }
             cell.date.text = event.date
             cell.time.text = event.time
             cell.layer.cornerRadius = 30
@@ -57,8 +61,6 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
     
             cell.date.text = event.date
             cell.time.text = event.time
-            
-            cell.backgroundColor = UIColor.lightGray
             return cell
         }else if collectionView == teamsCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell

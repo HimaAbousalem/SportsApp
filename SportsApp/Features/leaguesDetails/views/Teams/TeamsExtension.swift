@@ -30,6 +30,9 @@ extension LeaguesDetailsViewController{
     
     func setTeamsData(teams: [Team]) {
         self.teams =  teams
+        if(self.teams.count != 0){
+            teamsCollectionView.backgroundView = nil
+        }
         self.teamsCollectionView.reloadData()
     }
 }

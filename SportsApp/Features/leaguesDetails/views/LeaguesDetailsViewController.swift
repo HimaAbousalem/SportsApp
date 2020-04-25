@@ -28,7 +28,9 @@ class LeaguesDetailsViewController: UIViewController, LeaguesDetailsViewDelegate
     var teams = [Team]()
     var notFavImage = UIImage(named: "notfav.png")
     var favImage = UIImage(named: "fav.png")
-    
+    var noUpcomingEvents: UIImageView?
+    var noTeams: UIImageView?
+    var noLatestEvents: UIImageView?
     var destinaton: String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,18 @@ class LeaguesDetailsViewController: UIViewController, LeaguesDetailsViewDelegate
         }else{
             favouriteButton.setImage(notFavImage, for: .normal)
         }
+        
+        noUpcomingEvents = UIImageView(image: UIImage(named: "event.png"))
+        noUpcomingEvents?.contentMode = .center
+        upcomingCollectionView.backgroundView = noUpcomingEvents
+        
+        noLatestEvents = UIImageView(image: UIImage(named: "event.png"))
+        noLatestEvents?.contentMode = .center
+        latestCollectionView.backgroundView = noLatestEvents
+        
+        noTeams = UIImageView(image: UIImage(named: "event.png"))
+        noTeams?.contentMode = .center
+        teamsCollectionView.backgroundView = noTeams
         
         let swipeLeft = UISwipeGestureRecognizer()
         swipeLeft.addTarget(self, action: #selector(backSegue) )
