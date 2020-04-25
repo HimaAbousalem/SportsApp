@@ -14,13 +14,11 @@ extension LeaguesDetailsViewController{
         print("No Latest events !!")
     }
     func setLatestEvents(list: [Event]) {
-     print("######## loaded events size ######### \(list.count)")
-        self.latestEvents = list
+     self.latestEvents = list.filter{latest in return latest.homeTeam != "null" && latest.homeTeam != "" && latest.awayTeam != "null" && latest.awayTeam != ""}
         self.latestCollectionView.reloadData()
      }
     func setupLatestCollectionViewSize(){
         if latestViewFlowLayout == nil{
-            let itemsPerRow:CGFloat = 1
             let lineSpacing:CGFloat = 1
             let width = UIScreen.main.bounds.width * 0.95
             let height = (UIScreen.main.bounds.height) * 0.2

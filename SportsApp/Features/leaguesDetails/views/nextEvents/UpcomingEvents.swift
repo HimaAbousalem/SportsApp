@@ -14,14 +14,13 @@ extension LeaguesDetailsViewController{
         print("No Up coming events yet!!")
     }
     func setNextEvents(list: [Event]) {
-        print("######## loaded events size ######### \(list.count)")
-        self.nextEvents = list
+        self.nextEvents = list.filter{upcoming in return upcoming.homeTeam != "null" && upcoming.homeTeam != "" && upcoming.awayTeam != "null" && upcoming.awayTeam != ""}
         self.upcomingCollectionView.reloadData()
     }
     
     func setUpUpcomingCollectionViewSize(){
         if upComingFlowLayout == nil{
-            let itemsPerRow:CGFloat = 2
+            let _:CGFloat = 2
             let lineSpacing:CGFloat = 5
             let width = (UIScreen.main.bounds.width * 0.5)
             let height = (UIScreen.main.bounds.height) * 0.23
@@ -29,7 +28,7 @@ extension LeaguesDetailsViewController{
             upComingFlowLayout.itemSize = CGSize(width: width, height: height)
             upComingFlowLayout.sectionInset = UIEdgeInsets(top: lineSpacing, left: lineSpacing, bottom: lineSpacing, right: lineSpacing)
             upComingFlowLayout.scrollDirection = .horizontal
-        upcomingCollectionView.setCollectionViewLayout(upComingFlowLayout, animated: true)
+            upcomingCollectionView.setCollectionViewLayout(upComingFlowLayout, animated: true)
             
         }
     }

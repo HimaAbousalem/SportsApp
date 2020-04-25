@@ -43,7 +43,7 @@ class FetchLatestEventsHandler {
                      events.append(event)
                     }
                     NotificationCenter.default.post(name: .getLatestEvents, object:nil, userInfo: ["latestEvents": events])
-                case .failure(let error):
+                case .failure( _):
                     print("error !")
                 }
         }

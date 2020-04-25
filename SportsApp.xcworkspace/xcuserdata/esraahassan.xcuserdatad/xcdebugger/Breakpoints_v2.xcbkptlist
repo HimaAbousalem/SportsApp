@@ -58,7 +58,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609464578.76594"
+                  timestampString = "609466024.030254"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -73,7 +73,7 @@
                   moduleName = "SportsApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/esraahassan/Desktop/Swift-Project/SportsApp/SportsApp/core/network/FetchTeams.swift"
-                  timestampString = "609464578.779294"
+                  timestampString = "609466024.043148"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -89,40 +89,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SportsApp/Features/leaguesDetails/views/LeaguesDetailsViewController.swift"
-            timestampString = "609464577.221025"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "favouriteAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SportsApp/Features/leaguesDetails/views/LeaguesDetailsViewController.swift"
-            timestampString = "609464577.221373"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "favouriteAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SportsApp/core/database/LeaguesDatabaseHandler.swift"
-            timestampString = "609464577.221639"
+            timestampString = "609467690.394327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsApp/core/database/LeaguesDatabaseHandler.swift"
-            timestampString = "609464577.2220941"
+            timestampString = "609467690.394676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsApp/Features/Favourites/view/FavouriteTableViewLogic.swift"
-            timestampString = "609464577.2223459"
+            timestampString = "609467690.394855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -170,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SportsApp/Features/Favourites/view/FavouritesTableViewController.swift"
-            timestampString = "609464577.222563"
+            timestampString = "609467690.395118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"

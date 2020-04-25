@@ -45,18 +45,14 @@ extension LeaguesDetailsViewController: UICollectionViewDelegate, UICollectionVi
             let event = latestEvents[indexPath.row]
             cell.team1.text = event.homeTeam
             cell.team2.text = event.awayTeam
-            print("score 1 is \(event.homeScore)")
-            print("score 2 is \(event.awayScore)")
-            /*if let score1 = event.homeScore{
-                cell.score1.text = score1
-            }else{
-                cell.score1.text = "0"
+            
+            if event.homeScore != "" {
+                cell.score1.text = event.homeScore
             }
-            if let score2 = event.awayScore{
-                cell.score2.text = score2
-            }else{
-                cell.score2.text = "0"
-            }*/
+            if event.awayScore != "" {
+                cell.score2.text = event.awayScore
+            }
+    
             cell.date.text = event.date
             cell.time.text = event.time
             
